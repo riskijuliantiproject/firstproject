@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>LatihanRevou</title>
+  </head>
+  <body>
+    <header class="header-wrapper">
+      <img class="logo" alt="revou-logo" src="./logo.png" />
+      <div class="menu">
+        <button><a href="#home">Homes</a></button>
+        <button><a href="#our-package">Our Package</a></button>
+        <button><a href="#call-us">Call Us</a></button>
+      </div>
+    </header>
+
+    <main>
+      <div id="home" class="home">
+        <h1>Top Rated <span>E-Booking Explore Wisata</span> In</h1>
+        <h1>Indonesian</h1>
+        <p>Daily recommendations with the best scenict tours</p>
+      </div>
+      <div class="hero">
+        <div class="contanier">
+          <div class="hero-img">
+            <div>
+              <img class="img-slideshow" src="assets1.jpg" />
+              <img class="img-slideshow" src="assets2.jpg" />
+              <img class="img-slideshow" src="assets3.jpg" />
+              <img class="img-slideshow" src="assets4.jpg" />
+              <img class="img-slideshow" src="assets5.jpg" />
+              <p id="explore">"Ayo Explore Wisata mu di WisataWorld"</p>
+            </div>
+
+            <script>
+              var slideIndex = 1;
+              showDivs(slideIndex);
+
+              function plusDivs(n) {
+                showDivs((slideIndex += n));
+              }
+
+              function showDivs(n) {
+                var i;
+                var imgList = document.getElementsByClassName('img-slideshow');
+                if (n > imgList.length) slideIndex = 1;
+                else if (n < 1) slideIndex = imgList.length;
+
+                for (i = 0; i < imgList.length; i++) {
+                  imgList[i].style.display = 'none';
+                }
+
+                imgList[slideIndex - 1].style.display = 'block';
+              }
+
+              setInterval(() => {
+                plusDivs(1);
+              }, 1000);
+            </script>
+          </div>
+          <div class="content">
+            <div class="form-section">
+              <h3>Contact Us</h3>
+              <p>We will contact you 1X24 hours</p>
+              <form name="message-form" onsubmit="return validateForm()">
+                Your Name <br />
+                <input placeholder="First and last name" id="form" type="text" name="name" />
+                <br />
+
+                Email Address: <br />
+                <input type="email" id="form" name="email" placeholder="example@email.com" />
+                <br />
+
+                What are you interested in?<br />
+                <select name="interested" id="form">
+                  <option value="Pangandaran" name="interested">Pangandaran</option>
+                  <option value="Jayanti" name="interested">Jayanti</option>
+                  <option value="Sayangheulang" name="interested">Sayangheulang</option>
+                  <option value="Rancabuaya" name="interested">Rancabuaya</option>
+                </select>
+                <br />
+
+                <input type="submit" value="Submit" class="btn" />
+              </form>
+              <script>
+                function validateForm() {
+                  var name = document.forms['message-form']['name'].value;
+                  var email = document.forms['message-form']['email'].value;
+                  var interested = document.forms['message-form']['interested'].value;
+
+                  if (name == '' || email == '' || interested == '') {
+                    alert('Input tidak boleh kosong');
+                    return false;
+                  }
+
+                  document.getElementById('sender-name').innerText = name;
+                  document.getElementById('sender-email').innerText = email;
+                  document.getElementById('sender-interested').innerText = interested;
+                  return false;
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-output">
+        <p>Your name: <span id="sender-name"></span></p>
+        <p>Your Email: <span id="sender-email"></span></p>
+        <p>Your interested: <span id="sender-interested"></span></p>
+      </div>
+      <div class="contanier">
+        <h4>
+          Use This space to provide users with more information <br />
+          about your offer. Consider it a follow-up to your headline and <br />
+          explain the benefits of your service or product
+        </h4>
+        <div></div>
+      </div>
+      <div class="benefit">
+        <div class="statement"><span class="circle" style="text-align: left">1</span> Your First Picture , written in the form of a benefit of a benefit statement <br /></div>
+        <div class="statement"><span class="circle" style="text-align: left">2</span> Your Second Picture , written in the form of a benefit of a benefit statement <br /></div>
+        <div class="statement"><span class="circle" style="text-align: left">3</span> Your Third Picture , written in the form of a benefit of a benefit statement <br /></div>
+      </div>
+      <section id="our-package" class="package">
+        <div class="contanier">
+          <div class="sec-top">
+            <h1>Our <span>package</span></h1>
+          </div>
+
+          <div class="boxs">
+            <div class="box">
+              <i class="fa-solid fa-pen-ruler"></i>
+              <h3>Beautiful Place</h3>
+              <p>Lorem ipsum dolor sit Voluptates ad sit expedita maxime ipsa molestias quasi?</p>
+
+              <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="box">
+              <i class="fa-solid fa-rocket"></i>
+              <h3>Comfortable Place</h3>
+              <p>Lorem ipsum dolor. Voluptates ad sit expedita maxime ipsa molestias quasi?</p>
+
+              <a href="#" class="btn">Read More</a>
+            </div>
+
+            <div class="box">
+              <i class="fa-solid fa-code"></i>
+              <h3>Clean Place</h3>
+              <p>Lorem ipsum dolor . Voluptates ad sit expedita maxime ipsa molestias quasi?</p>
+
+              <a href="#" class="btn">Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="call-us" id="call-us">
+        <div class="contanier">
+          <div class="sec-top">
+            <h1><span> Call</span> Us</h1>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit minus deserunt quibusdam nihil delectus fuga id et dolores ipsam perferendis dolorem porro non saepe repellat, modi ad voluptatem consequuntur in voluptate ex!
+              Dolor et in provident incidunt debitis, vel, quos ratione placeat quasi sapiente modi eligendi, hic veniam. Quidem laudantium labore quaerat non aliquam corrupti eum laborum facere molestias ratione voluptatum exercitationem
+              est eos enim explicabo, alias aspernatur, maiores quos modi odit tempora sit nostrum, incidunt velit! Aspernatur expedita, tempore aperiam alias consectetur animi velit quam voluptas fugiat aliquid, minima quia pariatur eaque
+              soluta at sed tenetur veritatis. Inventore, quam?
+            </p>
+
+            <a href="#" class="btn">Call To Action</a>
+          </div>
+        </div>
+      </section>
+      <div class="package" style="padding-bottom: 40px">
+        <img class="logo" alt="revou-logo" src="./logo.png" />
+        <p>Term Of Service</p>
+        <p>@Copyright 2023</p>
+      </div>
+    </main>
+  </body>
+</html>
